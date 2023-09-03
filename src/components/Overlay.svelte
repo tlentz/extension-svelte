@@ -4,13 +4,26 @@
     import Options from "./Options.svelte";
 
     let count = 0;
+    let key = '';
 
     onMount(() => {
         storage.get().then((storage) => (count = storage.count));
     });
+
+    function handleKeydown(event: KeyboardEvent) {
+        key = event.key;
+        if (key === 'Escape') {
+            key = '';
+        }
+    }
 </script>
 
+<svelte:window on:keydown={handleKeydown} />
+
 <div class="overlay">
+    {#if key !==''}
+         <div>last key pressed: {key}</div>
+    {/if}
     <Options {count} />
 </div>
 

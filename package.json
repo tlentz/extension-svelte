@@ -13,6 +13,8 @@
         "@sveltejs/vite-plugin-svelte": "2.4.5",
         "@tsconfig/svelte": "5.0.2",
         "@types/chrome": "0.0.243",
+        "css-selector-generator": "^3.6.4",
+        "get-xpath": "^3.1.0",
         "sass": "^1.66.1",
         "svelte": "4.2.0",
         "svelte-check": "3.5.0",
@@ -20,5 +22,8 @@
         "tslib": "2.6.2",
         "typescript": "5.2.2",
         "vite": "4.2.3"
+    },
+    "dependencies": {
+        "@zerodevx/svelte-json-view": "^1.0.7"
     }
 }

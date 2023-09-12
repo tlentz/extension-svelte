@@ -3,7 +3,7 @@
   import { storage } from "../storage";
   import Options from "./Options.svelte";
   import { writable } from "svelte/store";
-  import { clip, type ClipperResponse } from "../lib/Clipper";
+  import { clip, type ClipperResponse } from "../lib/Clipper.ts";
   import { JsonView } from "@zerodevx/svelte-json-view";
 
   let count = 0;
@@ -31,6 +31,10 @@
       hovering.set(!$hovering);
     } else if (key === "2") {
       isCollapsed.set(!$isCollapsed);
+    } else if (key === "3") {
+      if($hoveredElement) {
+        $hoveredElement.click();
+      }
     }
   }
 
@@ -102,6 +106,7 @@
     </div>
   {/if}
 </div>
+
 
 <!-- SVG Circle -->
 <!-- {#if $clipperResponse.ok?.dimensions && $clipperResponse.ok?.absolutePosition}
